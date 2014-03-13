@@ -1,1 +1,1 @@
-A simple program (algorithm_timer.cpp) to show time compsumtion of different algorithm complexities.
+algorithm_timer.cpp is a simple program that shows time compsumption in O(n), O(n^2) and O(n^3) algorithm complexities.
