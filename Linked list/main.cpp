@@ -48,9 +48,5 @@ void print_list(list &l){
 	for (POSITION pos = l.first(); pos != l.end(); pos = l.next(pos)){
 		cout << pos->element << endl;
 	}
-
-	if (l.first() == l.end()){
-		cout << "The list is empty" << endl;
-	}
 	cout << endl;
 }
