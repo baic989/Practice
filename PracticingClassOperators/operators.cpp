@@ -49,7 +49,8 @@ void car::setCode(string code){
 // Operator will tell the compiler to add
 // the variables speed of two classes so when we type
 // car3 = car2 + car1;
-// car3 will have the added values of car1 and car2.
+// car3 will have the added values of car1 and car2 and +100
+// (+ 100 is there just to differ from the default operator)
 // Compiler reads it like
 // car3 = car2.operator+(car1);
 car car::operator+(car &someCar){
