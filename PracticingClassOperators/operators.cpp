@@ -52,7 +52,25 @@ car car::operator+(car &someCar){
 	return car(speed + someCar.getSpeed() + 100, year, codename);
 }
 
+// Our assignment operator will let us know if the car is cloned
 car car::operator=(car &someCar){
 	return car(speed = someCar.getSpeed(), year = someCar.getYear(), codename = someCar.getCode() + " clone");
 }
 
+// In this example two cars are equal if
+// they are manufactured the same year
+bool car::operator==(car &someCar){
+	if (this->getYear() == someCar.getYear()){
+		return true;
+	}
+	return false;
+}
+
+// In this example one car is "bigger" if
+// it's speed is higher
+bool car::operator>(car &someCar){
+	if (this->getSpeed() > someCar.getSpeed()){
+		return true;
+	}
+	return false;
+}

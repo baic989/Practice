@@ -21,6 +21,8 @@ public:
 	void setCode(std::string);
 	car operator+(car&); // Will define the '+' operator for our class
 	car operator=(car&); // Will define the '=' operator for our class
+	bool operator==(car&); // Will define when two cars are the same
+	bool operator>(car&); // Will define when one car is "bigger"
 };
 
 
