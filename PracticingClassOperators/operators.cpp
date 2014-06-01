@@ -16,15 +16,17 @@ car::car(int spd, int yr, string code){
 	codename = code;
 }
 
-// Simply return speed
+// Simply returns speed
 int car::getSpeed(){
 	return speed;
 }
 
+// Returns year
 int car::getYear(){
 	return year;
 }
 
+// Returns codename
 string car::getCode(){
 	return codename;
 }
@@ -34,10 +36,12 @@ void car::setSpeed(int spd){
 	speed = spd;
 }
 
+// Sets the desired year
 void car::setYear(int yr){
 	year = yr;
 }
 
+// Sets the desired codename
 void car::setCode(string code){
 	codename = code;
 }
