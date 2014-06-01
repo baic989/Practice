@@ -5,6 +5,7 @@ using namespace std;
 // Default value
 car::car(){
 	speed = 0;
+	year = 0;
 	codename = "";
 }
 
