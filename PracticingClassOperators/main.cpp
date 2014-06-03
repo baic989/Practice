@@ -44,6 +44,14 @@ int main(){
 	cout << endl;
 	cout << "Ferrari is faster than Mazda: " << (Ferrari > Mazda) << endl;
 	cout << "Ford is faster than Mazda: " << (Ford > Mazda) << endl;
+	cout << endl;
+
+	// Testing output stream
+	cout << endl;
+	cout << Mazda;
+	cout << endl << endl;
+	cout << Ford;
+	cout << endl;
 
 	return 0;
 }

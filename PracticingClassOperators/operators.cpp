@@ -59,7 +59,7 @@ car car::operator+(car &someCar){
 
 // Our assignment operator will let us know if the car is cloned
 car car::operator=(car &someCar){
-	return car(speed = someCar.getSpeed(), year = someCar.getYear(), codename = someCar.getCode() + " clone");
+	return car(speed = someCar.getSpeed(), year = someCar.getYear(), codename = someCar.getCode());
 }
 
 // In this example two cars are equal if
