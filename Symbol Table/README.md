@@ -1,5 +1,7 @@
-Symbol table is an unsorted container storing key/value pairs.
-Supported operations:
--insert
--search
--delete
+Symbol table
+============
+An unsorted container storing key/value pairs.<br>
+Supported operations
+- insert
+- search
+- delete
