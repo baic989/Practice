@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+  <student id="12345678909">
+    <fname>Ana</fname>
+    <lname>Anić</lname>
+    <email>ana@gmail.com</email>
+  </student>
+  <student id="09876543211">
+    <fname>Luka</fname>
+    <lname>Lukavski</lname>
+    <email>lukavski.luka@googlemail.com</email>
+  </student>
+  <student id="67890554321">
+    <fname>Niko</fname>
+    <lname>Nikolić</lname>
+    <email>niko.nikolic@hotmail.com</email>
+  </student>
+</students>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Example 1</title>
+    <style>
+        body{
+            font-family:'Segoe UI';
+        }
+        table, tr, td, th {
+            border-collapse:collapse;
+        }
+        tr{
+            border-bottom:1px solid;
+        }
+        td, th{
+            padding:10px;
+        }
+        th{
+            text-align:left;
+        }
+        td{
+            font-size:.9em;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+           LoadXML("Students.xml");
+        }
+        
+        var xmlObj = new XMLHttpRequest();
+        
+        function LoadXML(fileName){
+            xmlObj.open("GET", fileName, true);
+            xmlObj.onreadystatechange = OnStateChange;
+            xmlObj.send();
+        }
+        
+        function OnStateChange(){
+            if(xmlObj.readyState == 4){
+                ShowStudents();   
+            }
+        }
+        
+        function ShowStudents(){
+            var numberOfNodes = GetXMLRoot().childNodes.length;
+            var numberOfStudents = 0;
+            
+            for(var i = 0; i < numberOfNodes; i++){
+                if(GetXMLRoot().childNodes[i].nodeType == 1 && GetXMLRoot().childNodes[i].nodeName ==  "student"){
+                    numberOfStudents++;
+                    var fname = GetXMLRoot().childNodes[i].getElementsByTagName("fname")[0].firstChild.nodeValue;
+                    var lname = GetXMLRoot().childNodes[i].getElementsByTagName("lname")[0].firstChild.nodeValue;
+                    var id = GetXMLRoot().childNodes[i].attributes.getNamedItem("id").value;
+                    
+                    PrintStudents(fname, lname, id);
+                }   
+            }
+        }
+        
+        function GetXMLRoot(){
+            return xmlObj.responseXML.documentElement;   
+        }
+        
+        function PrintStudents(fname, lname, id){
+            var tbl = document.getElementById("tbl");
+            var tr = document.createElement("tr");
+            
+            var tdFname = document.createElement("td");
+            tdFname.appendChild(document.createTextNode(fname));
+            
+            var tdLname = document.createElement("td");
+            tdLname.appendChild(document.createTextNode(lname));
+            
+            var tdId = document.createElement("td");
+            tdId.appendChild(document.createTextNode(id));
+            
+            tr.appendChild(tdFname);
+            tr.appendChild(tdLname);
+            tr.appendChild(tdId);
+            
+            tbl.appendChild(tr);
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <br />
+    <table id="tbl">
+        <tr>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>ID</th>
+        </tr>
+    </table>
+</body>
+</html>
