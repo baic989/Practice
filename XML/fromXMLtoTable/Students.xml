@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<students>
+<?xml-stylesheet href="Students.xsl" type="text/xsl"?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:SchemaLocation="StudentsSchema.xsd">
   <student id="12345678909">
     <fname>Ana</fname>
     <lname>Anić</lname>
