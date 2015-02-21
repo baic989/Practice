@@ -29,6 +29,10 @@
                         </li>
                     </ul>
                 </xsl:for-each>
+                
+                <p>
+                    Number of students in document: <xsl:value-of select="count(/students/student)" />
+                </p>
             </body>
         </html>
     </xsl:template>
