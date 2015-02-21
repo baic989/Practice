@@ -19,6 +19,9 @@
                             <xsl:value-of select="lname" />
                         </li>
                         <li>
+                            <xsl:value-of select="age" />
+                        </li>
+                        <li>
                             <a>
                                 <xsl:attribute name="href">
                                     mailto:
@@ -32,6 +35,9 @@
                 
                 <p>
                     Number of students in document: <xsl:value-of select="count(/students/student)" />
+                </p>
+                <p>
+                    Total age: <xsl:value-of select="sum(/students/student/age)" />
                 </p>
             </body>
         </html>
