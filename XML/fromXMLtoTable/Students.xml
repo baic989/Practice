@@ -5,16 +5,19 @@
   <student id="12345678909">
     <fname>Ana</fname>
     <lname>Anić</lname>
+    <age>20</age>
     <email>ana@gmail.com</email>
   </student>
   <student id="09876543211">
     <fname>Luka</fname>
     <lname>Lukavski</lname>
+    <age>23</age>
     <email>lukavski.luka@googlemail.com</email>
   </student>
   <student id="67890554321">
     <fname>Niko</fname>
     <lname>Nikolić</lname>
+    <age>25</age>
     <email>niko.nikolic@hotmail.com</email>
   </student>
 </students>
