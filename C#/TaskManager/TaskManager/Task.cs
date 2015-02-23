@@ -30,6 +30,11 @@ namespace TaskManager
 
 			id = _id++;
 		}
+
+		public override string ToString ()
+		{
+			return string.Format ("Task: [Id={0}, Name={1}, Category={2}]", Id, Name, Category);
+		}
 	}
 }
 

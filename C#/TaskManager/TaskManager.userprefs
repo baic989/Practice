@@ -1,1 +1,14 @@
-﻿<Properties StartupItem="TaskManager/TaskManager.csproj" />
+﻿<Properties StartupItem="TaskManager/TaskManager.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaskManager/Program.cs">
+    <Files>
+      <File FileName="TaskManager/Program.cs" Line="44" Column="44" />
+      <File FileName="TaskManager/Task.cs" Line="3" Column="3" />
+      <File FileName="TaskManager/TaskManager.cs" Line="5" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
