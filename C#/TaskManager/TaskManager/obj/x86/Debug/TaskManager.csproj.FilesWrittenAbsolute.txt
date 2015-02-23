@@ -1,5 +1,0 @@
-/Users/hrvoje/Projects/TaskManager/TaskManager/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/hrvoje/Projects/TaskManager/TaskManager/bin/Debug/TaskManager.exe.mdb
-/Users/hrvoje/Projects/TaskManager/TaskManager/bin/Debug/TaskManager.exe
-/Users/hrvoje/Projects/TaskManager/TaskManager/obj/x86/Debug/TaskManager.exe
-/Users/hrvoje/Projects/TaskManager/TaskManager/obj/x86/Debug/TaskManager.exe.mdb
