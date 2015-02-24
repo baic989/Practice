@@ -33,7 +33,7 @@ namespace TaskManager
 						Manager.tasks.Add (t.Id, t);
 						break;
 					case 2:
-						Dictionary<int, Task> tasksByIdDict = new Dictionary<int, Task> ();
+						List<Task> tasksByIdDict = new List<Task> ();
 				
 						Console.WriteLine ("Please enter task ID:");
 						int taskID = int.Parse (Console.ReadLine ());
@@ -42,7 +42,7 @@ namespace TaskManager
 				
 						if (tasksByIdDict.Count != 0) {
 							foreach (var item in tasksByIdDict) {
-								Console.WriteLine ("Item found - " + item.Value);
+								Console.WriteLine ("Item found - " + item);
 							}
 						} else {
 							Console.WriteLine ("There are no entries found for that ID.");

@@ -7,12 +7,12 @@ namespace TaskManager
 	{
 		public Dictionary<int, Task> tasks = new Dictionary<int, Task>();
 
-		public Dictionary<int, Task> GetTasksById(int id){
-			Dictionary<int, Task> returnMe = new Dictionary<int, Task> ();
+		public List<Task> GetTasksById(int id){
+			List<Task> returnMe = new List<Task> ();
 
 			foreach (var item in tasks) {
 				if (item.Value.Id == id) {
-					returnMe.Add (item.Value.Id, item.Value);
+					returnMe.Add (item.Value);
 				}
 			}
 

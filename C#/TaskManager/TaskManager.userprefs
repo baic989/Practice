@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="TaskManager/Program.cs">
     <Files>
-      <File FileName="TaskManager/Program.cs" Line="44" Column="44" />
-      <File FileName="TaskManager/Task.cs" Line="3" Column="3" />
-      <File FileName="TaskManager/TaskManager.cs" Line="5" Column="5" />
+      <File FileName="TaskManager/Program.cs" Line="28" Column="28" />
+      <File FileName="TaskManager/Task.cs" Line="37" Column="37" />
+      <File FileName="TaskManager/TaskManager.cs" Line="4" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
