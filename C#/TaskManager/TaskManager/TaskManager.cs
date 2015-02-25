@@ -19,6 +19,18 @@ namespace TaskManager
 			return returnMe;
 		}
 
+		public List<Task> GetTasksByName(string name){
+			List<Task> returnMe = new List<Task> ();
+
+			foreach (var item in tasks) {
+				if (item.Value.Name == name) {
+					returnMe.Add (item.Value);
+				}
+			}
+
+			return returnMe;
+		}
+
 		public TaskManager ()
 		{
 		}
