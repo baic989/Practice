@@ -6,6 +6,7 @@ namespace TaskManager
 	public class TaskManager
 	{
 		public Dictionary<int, Task> tasks = new Dictionary<int, Task>();
+		public event AlertDelegate eventAlert;
 
 		public List<Task> GetTasksById(int id){
 			List<Task> returnMe = new List<Task> ();
@@ -41,6 +42,14 @@ namespace TaskManager
 			}
 
 			return returnMe;
+		}
+
+		public void CheckTasks(){
+			foreach (var item in tasks) {
+				if (DateTime.Now.Year == item.Value.ExecTime.Year && DateTime.Now.Month == item.Value.ExecTime.Month && DateTime.Now.Day == item.Value.ExecTime.Day && DateTime.Now.Hour == item.Value.ExecTime.Hour && (item.Value.ExecTime.Minute - DateTime.Now.Minute <= 15)) {
+					eventAlert (item.Value, null);
+				}
+			}
 		}
 
 		public TaskManager ()
