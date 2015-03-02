@@ -7,8 +7,6 @@ namespace TaskManager
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine (DateTime.Now);
-
 			TaskManager Manager = new TaskManager ();
 			Manager.eventAlert += Alert;
 

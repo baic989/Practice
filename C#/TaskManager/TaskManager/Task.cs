@@ -33,8 +33,14 @@ namespace TaskManager
 		}
 
 		public DateTime ExecTime {
-			get;
-			set;
+			get{
+				return ExecTime;
+			}
+			set{
+				if (value.Date < DateTime.Now) {
+					throw new BadDateTimeException();
+				}
+			}
 		}
 
 		public override string ToString ()
