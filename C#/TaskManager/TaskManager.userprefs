@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="TaskManager/TaskManager.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TaskManager/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaskManager/Task.cs">
     <Files>
-      <File FileName="TaskManager/Program.cs" Line="125" Column="125" />
-      <File FileName="TaskManager/Task.cs" Line="25" Column="25" />
-      <File FileName="TaskManager/TaskManager.cs" Line="33" Column="33" />
-      <File FileName="TaskManager/AlertDelegate.cs" Line="41" Column="41" />
+      <File FileName="TaskManager/Program.cs" Line="17" Column="17" />
+      <File FileName="TaskManager/Task.cs" Line="21" Column="21" />
+      <File FileName="TaskManager/TaskManager.cs" Line="5" Column="5" />
+      <File FileName="TaskManager/AlertDelegate.cs" Line="1" Column="1" />
+      <File FileName="TaskManager/BadDateTimeException.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

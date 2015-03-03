@@ -6,6 +6,7 @@ namespace TaskManager
 	{
 		private static int _id = 0;
 		private readonly int id;
+		private DateTime _dateTime;
 
 		public int Id {
 			get {
@@ -34,11 +35,13 @@ namespace TaskManager
 
 		public DateTime ExecTime {
 			get{
-				return ExecTime;
+				return _dateTime;
 			}
 			set{
-				if (value.Date < DateTime.Now) {
-					throw new BadDateTimeException();
+				if (value < DateTime.Now) {
+					throw new BadDateTimeException ();
+				} else {
+					_dateTime = value;
 				}
 			}
 		}
