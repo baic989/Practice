@@ -18,7 +18,7 @@ public class GameOfLife {
      */
     public static void main(String[] args) {
         
-        final int size = 30;
+        final int size = 10;
         
         // The world is actually flat :O
         boolean[][] worldMatrix = new boolean[size][size];
@@ -27,23 +27,24 @@ public class GameOfLife {
         worldMatrix[2][2] = true;
         worldMatrix[2][3] = true;
         worldMatrix[3][2] = true;
-        worldMatrix[20][20] = true;
-        worldMatrix[20][21] = true;
-        worldMatrix[21][20] = true;
+        worldMatrix[2][1] = true;
+        worldMatrix[1][2] = true;
+        worldMatrix[4][5] = true;
+        worldMatrix[5][5] = true;
+//        worldMatrix[4][6] = true;
+//        worldMatrix[5][6] = true;
+//        worldMatrix[4][7] = true;
+//        worldMatrix[7][1] = true;
+//        worldMatrix[8][1] = true;
+//        worldMatrix[8][2] = true;
         
         while(true){
-//            try {
-//                Runtime.getRuntime().exec("clear");
-//            } catch (IOException ex) {
-//                Logger.getLogger(GameOfLife.class.getName()).log(Level.SEVERE, null, ex);
-//            }
             
-            System.out.flush();
-            
-            Draw(LetTheGameBegin(worldMatrix, size), size);
+            worldMatrix = LetTheGameBegin(worldMatrix, size);
+            Draw(worldMatrix, size);
             
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException ex) {
                 Logger.getLogger(GameOfLife.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -68,12 +69,15 @@ public class GameOfLife {
     private static boolean[][] LetTheGameBegin(boolean[][] world, int size){
         
         int counter;
+        boolean[][] newWorldMatrix = new boolean[size][size];
         
         for (int i = 0; i < size; i++) {
             counter = 0;
             
             for (int j = 0; j < size; j++) {
+                counter = 0;
                 
+                // Check all neighbors if alive
                 if(j < size - 1)
                     if(world[i][j+1] == true)
                         counter++;
@@ -108,13 +112,19 @@ public class GameOfLife {
                 
                 // Check which should live and die
                 if(counter > 3 || counter < 2)
-                    world[i][j] = false;
+                    if(world[i][j] == true)
+                        newWorldMatrix[i][j] = false;
                 
                 if(counter >= 2 && counter <= 3)
-                    world[i][j] = true;
+                    if(world[i][j] == true)
+                        newWorldMatrix[i][j] = true;
+                
+                if(counter == 3)
+                    if(world[i][j] == false)
+                        newWorldMatrix[i][j] = true;
             }
         }
         
-        return world;
+        return newWorldMatrix;
     }
 }
