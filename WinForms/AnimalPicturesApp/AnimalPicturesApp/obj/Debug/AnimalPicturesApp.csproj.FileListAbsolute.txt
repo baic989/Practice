@@ -1,0 +1,10 @@
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\bin\Debug\AnimalPicturesApp.exe.config
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\bin\Debug\AnimalPicturesApp.exe
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\bin\Debug\AnimalPicturesApp.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.Form1.resources
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.MyResources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.Properties.Resources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.csproj.GenerateResource.Cache
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.exe
+c:\users\andrei\documents\visual studio 2013\Projects\AnimalPicturesApp\AnimalPicturesApp\obj\Debug\AnimalPicturesApp.pdb

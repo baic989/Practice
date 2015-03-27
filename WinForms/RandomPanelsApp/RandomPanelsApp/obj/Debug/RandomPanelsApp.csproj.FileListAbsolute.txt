@@ -1,0 +1,9 @@
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\bin\Debug\RandomPanelsApp.exe.config
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\bin\Debug\RandomPanelsApp.exe
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\bin\Debug\RandomPanelsApp.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.Form1.resources
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.Properties.Resources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.csproj.GenerateResource.Cache
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.exe
+c:\users\andrei\documents\visual studio 2013\Projects\RandomPanelsApp\RandomPanelsApp\obj\Debug\RandomPanelsApp.pdb
