@@ -15,6 +15,16 @@ namespace LoginScreen
             {
                 Response.Redirect("Login.aspx");
             }
+
+            else
+            {
+                Response.Write("Hello " + Request.Cookies["LoginData"]["Username"]);
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

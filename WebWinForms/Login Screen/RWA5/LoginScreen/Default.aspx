@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Login as different user" OnClick="Button1_Click" />
     </div>
     </form>
 </body>
