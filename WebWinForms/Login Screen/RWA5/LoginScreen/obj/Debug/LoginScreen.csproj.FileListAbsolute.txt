@@ -1,0 +1,6 @@
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\bin\LoginScreen.dll.config
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\bin\LoginScreen.dll
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\bin\LoginScreen.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\obj\Debug\LoginScreen.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\obj\Debug\LoginScreen.dll
+c:\users\andrei\documents\visual studio 2013\Projects\RWA5\LoginScreen\obj\Debug\LoginScreen.pdb
