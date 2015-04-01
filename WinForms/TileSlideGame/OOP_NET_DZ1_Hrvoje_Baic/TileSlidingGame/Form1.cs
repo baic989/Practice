@@ -106,6 +106,7 @@ namespace TileSlidingGame
                         p.Height = gamePanel.Height / size;
                         p.Margin = new Padding(0);
                         p.Click += p_Click;
+                        p.Name = index.ToString();
 
                         x3Box[index] = p;
 
@@ -114,7 +115,7 @@ namespace TileSlidingGame
                         Graphics g = Graphics.FromImage(x3Box[index].BackgroundImage);
 
                         // Cropping
-                        g.DrawImage(resizedImage, new Rectangle(0, 0, gamePanel.Width / size, gamePanel.Height/ size), new Rectangle(i * gamePanel.Width / size, j * gamePanel.Height / size, gamePanel.Width / size, gamePanel.Height / size), GraphicsUnit.Pixel);
+                        g.DrawImage(resizedImage, new Rectangle(0, 0, gamePanel.Width / size, gamePanel.Height / size), new Rectangle(i * gamePanel.Width / size, j * gamePanel.Height / size, gamePanel.Width / size, gamePanel.Height / size), GraphicsUnit.Pixel);
                         g.Dispose();
                     }
                 }
@@ -125,6 +126,7 @@ namespace TileSlidingGame
                 }
 
                 x3Box[0].BackgroundImage = null;
+                x3Box[0].Name = "Empty";
             }
             else
             {
@@ -160,22 +162,155 @@ namespace TileSlidingGame
                 }
 
                 x4Box[0].BackgroundImage = null;
+                x4Box[0].Name = "Empty";
             }
         }
 
         // Clicked panel will check if there are any free spaces to move
         void p_Click(object sender, EventArgs e)
         {
+            Panel clickedPanel = sender as Panel;
+            int iOfBlankFile = 0;
+            int jOfBlankFile = 0;
+            int iOfClickedPanel = 0;
+            int jOfClickedPanel = 0;
+            Panel temp = new Panel();
+
             if (size == 3)
             {
                 for (int i = 0; i < size; i++)
                 {
                     for (int j = 0; j < size; j++)
                     {
-                        
+                        int index = i * size + j;
+
+                        if (x3Box[index].Name == "Empty")
+                        {
+                            iOfBlankFile = i;
+                            jOfBlankFile = j;
+                        }
+
+                        if (x3Box[index].Name == clickedPanel.Name)
+                        {
+                            iOfClickedPanel = i;
+                            jOfClickedPanel = j;
+                        }
                     }
                 }
             }
+            else
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        int index = i * size + j;
+
+                        if (x3Box[index].Name == "Empty")
+                        {
+                            iOfBlankFile = i;
+                            jOfBlankFile = j;
+                        }
+
+                        if (x3Box[index].Name == clickedPanel.Name)
+                        {
+                            iOfClickedPanel = i;
+                            jOfClickedPanel = j;
+                        }
+                    }
+                }
+            }
+
+            // Check to see where is the clicked panel
+            // First check to see if it is in one of the corners
+
+            // If in left upper corner
+            if (iOfClickedPanel == 0 && jOfClickedPanel == 0)
+            {
+                if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1){
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+            }
+            // If in right upper corner
+            else if (iOfClickedPanel == 0 && jOfClickedPanel == size - 1)
+            {
+                if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+                else if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+            }
+            // If in left lower corner
+            else if (iOfClickedPanel == size - 1 && jOfClickedPanel == 0)
+            {
+                if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+            }
+            // If in right lower corner
+            else if (iOfClickedPanel == size - 1 && jOfClickedPanel == size - 1)
+            {
+                if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+            }
+            // If on upper border
+            else if (iOfClickedPanel == 0 && jOfClickedPanel > 0 && jOfClickedPanel < size){
+                if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    temp = x3Box[iOfClickedPanel];
+                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
+                    x3Box[iOfBlankFile] = temp;
+                }
+            }
+            // If on left border
+            else if ((iOfClickedPanel > 0 && iOfClickedPanel < size - 1) && jOfClickedPanel == 0){
+
+            }
+            // If on bottom border
+            else if (iOfClickedPanel == size - 1 && (jOfClickedPanel > 0 && jOfClickedPanel < size - 1))
+            {
+
+            }
+            else if ((iOfClickedPanel > 0 && iOfClickedPanel < size - 1) && jOfClickedPanel == size - 1)
+            {
+
+            }
+            // Else it must be in the middle somewhere so we
+            // have to check if there is free space on all four sides
             else
             {
 
