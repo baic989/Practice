@@ -36,12 +36,11 @@
             this.dogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mountainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bSODToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shuffleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gamePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gamePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +49,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sizeToolStripMenuItem,
             this.loadPictureToolStripMenuItem,
-            this.shuffleToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -113,27 +111,6 @@
             this.bSODToolStripMenuItem.Text = "BSOD";
             this.bSODToolStripMenuItem.Click += new System.EventHandler(this.bSODToolStripMenuItem_Click);
             // 
-            // shuffleToolStripMenuItem
-            // 
-            this.shuffleToolStripMenuItem.Name = "shuffleToolStripMenuItem";
-            this.shuffleToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.shuffleToolStripMenuItem.Text = "Shuffle";
-            // 
-            // gamePanel
-            // 
-            this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gamePanel.Location = new System.Drawing.Point(0, 24);
-            this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(404, 358);
-            this.gamePanel.TabIndex = 1;
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -156,6 +133,21 @@
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // gamePanel
+            // 
+            this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gamePanel.Location = new System.Drawing.Point(0, 24);
+            this.gamePanel.Name = "gamePanel";
+            this.gamePanel.Size = new System.Drawing.Size(404, 358);
+            this.gamePanel.TabIndex = 1;
             // 
             // gameForm
             // 
@@ -182,7 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem x3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem x4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadPictureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shuffleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mountainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bSODToolStripMenuItem;

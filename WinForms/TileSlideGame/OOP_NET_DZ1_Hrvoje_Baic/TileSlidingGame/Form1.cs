@@ -16,7 +16,9 @@ namespace TileSlidingGame
         Image currentImage;
         Panel[] x3Box;
         Panel[] x4Box;
+        Timer timer = new Timer();
         int size;
+        long secondsPlayed = 0;
 
         public gameForm()
         {
@@ -30,8 +32,18 @@ namespace TileSlidingGame
             x3Box = new Panel[9];
             x4Box = new Panel[16];
 
+            timer.Interval = (1000) * 1;
+            timer.Enabled = true;
+            timer.Start();
+            timer.Tick += timer_Tick;
+
             // Initialize new game
             DrawNewImage(size);
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            secondsPlayed++;
         }
 
         // Click on "3x3" will set the new game
@@ -142,6 +154,7 @@ namespace TileSlidingGame
                         p.Height = gamePanel.Height / size;
                         p.Margin = new Padding(0);
                         p.Click += p_Click;
+                        p.Name = index.ToString();
 
                         x4Box[index] = p;
 
@@ -169,11 +182,15 @@ namespace TileSlidingGame
         // Clicked panel will check if there are any free spaces to move
         void p_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Clicked after" + secondsPlayed + " seconds.");
+
             Panel clickedPanel = sender as Panel;
             int iOfBlankFile = 0;
             int jOfBlankFile = 0;
             int iOfClickedPanel = 0;
             int jOfClickedPanel = 0;
+            int indexOfClickedPanel = 0;
+            int indexOfBlankPanel = 0;
             Panel temp = new Panel();
 
             if (size == 3)
@@ -188,12 +205,16 @@ namespace TileSlidingGame
                         {
                             iOfBlankFile = i;
                             jOfBlankFile = j;
+
+                            indexOfBlankPanel = iOfBlankFile * size + jOfBlankFile;
                         }
 
                         if (x3Box[index].Name == clickedPanel.Name)
                         {
                             iOfClickedPanel = i;
                             jOfClickedPanel = j;
+
+                            indexOfClickedPanel = iOfClickedPanel * size + jOfClickedPanel;
                         }
                     }
                 }
@@ -206,16 +227,20 @@ namespace TileSlidingGame
                     {
                         int index = i * size + j;
 
-                        if (x3Box[index].Name == "Empty")
+                        if (x4Box[index].Name == "Empty")
                         {
                             iOfBlankFile = i;
                             jOfBlankFile = j;
+
+                            indexOfBlankPanel = iOfBlankFile * size + jOfBlankFile;
                         }
 
-                        if (x3Box[index].Name == clickedPanel.Name)
+                        if (x4Box[index].Name == clickedPanel.Name)
                         {
                             iOfClickedPanel = i;
                             jOfClickedPanel = j;
+
+                            indexOfClickedPanel = iOfClickedPanel * size + jOfClickedPanel;
                         }
                     }
                 }
@@ -229,14 +254,17 @@ namespace TileSlidingGame
             {
                 if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    
                 }
                 else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1){
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
             }
             // If in right upper corner
@@ -244,15 +272,17 @@ namespace TileSlidingGame
             {
                 if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
                 else if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
             }
             // If in left lower corner
@@ -260,15 +290,17 @@ namespace TileSlidingGame
             {
                 if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
                 else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
             }
             // If in right lower corner
@@ -276,44 +308,209 @@ namespace TileSlidingGame
             {
                 if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
                 else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
             }
             // If on upper border
             else if (iOfClickedPanel == 0 && jOfClickedPanel > 0 && jOfClickedPanel < size){
                 if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
                 {
-                    temp = x3Box[iOfClickedPanel];
-                    x3Box[iOfClickedPanel] = x3Box[iOfBlankFile];
-                    x3Box[iOfBlankFile] = temp;
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
                 }
             }
             // If on left border
             else if ((iOfClickedPanel > 0 && iOfClickedPanel < size - 1) && jOfClickedPanel == 0){
-
+                if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
             }
             // If on bottom border
             else if (iOfClickedPanel == size - 1 && (jOfClickedPanel > 0 && jOfClickedPanel < size - 1))
             {
-
+                if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
             }
+            // If on right border
             else if ((iOfClickedPanel > 0 && iOfClickedPanel < size - 1) && jOfClickedPanel == size - 1)
             {
-
+                if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
             }
             // Else it must be in the middle somewhere so we
             // have to check if there is free space on all four sides
             else
             {
+                if (iOfBlankFile == iOfClickedPanel - 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel - 1)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel + 1 && jOfBlankFile == jOfClickedPanel)
+                {
+                    if(size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+                else if (iOfBlankFile == iOfClickedPanel && jOfBlankFile == jOfClickedPanel + 1)
+                {
+                    if (size == 3)
+                        refreshX3GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                    else
+                        refreshX4GamePanelControls(indexOfClickedPanel, indexOfBlankPanel);
+                }
+            }
 
+            checkIfWon();
+        }
+
+        private void refreshX3GamePanelControls(int indexOfClickedPanel, int indexOfBlankPanel)
+        {
+            Panel temp = new Panel();
+
+            temp = x3Box[indexOfClickedPanel];
+            x3Box[indexOfClickedPanel] = x3Box[indexOfBlankPanel];
+            x3Box[indexOfBlankPanel] = temp;
+
+            gamePanel.Controls.Clear();
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    int index = i * size + j;
+
+                    gamePanel.Controls.Add(x3Box[index]);
+                }
+            }
+        }
+
+        private void refreshX4GamePanelControls(int indexOfClickedPanel, int indexOfBlankPanel)
+        {
+            Panel temp = new Panel();
+
+            temp = x4Box[indexOfClickedPanel];
+            x4Box[indexOfClickedPanel] = x4Box[indexOfBlankPanel];
+            x4Box[indexOfBlankPanel] = temp;
+
+            gamePanel.Controls.Clear();
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    int index = i * size + j;
+
+                    gamePanel.Controls.Add(x4Box[index]);
+                }
+            }
+        }
+
+        private void checkIfWon()
+        {
+            if (size == 3)
+            {
+                // Possible bug, needs testing
+                if(x3Box[0].Name == "Empty" && x3Box[1].Name == "3" && x3Box[2].Name == "6" && x3Box[3].Name == "1" && x3Box[4].Name == "4" && x3Box[5].Name == "7" && x3Box[6].Name == "3" && x3Box[7].Name == "5" && x3Box[8].Name == "8"){
+                    MessageBox.Show("Congratulations! You won! \nTime played: " + secondsPlayed + " seconds.");
+                }
+
+                DrawNewImage(size);
+            }
+            else
+            {
+                // Not yet implemented because of the way it crops the picture.
+                // it is somehow unordered and hard to see which part is where in the array
             }
         }
 
