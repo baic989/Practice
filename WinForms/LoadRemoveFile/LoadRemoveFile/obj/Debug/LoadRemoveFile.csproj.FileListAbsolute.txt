@@ -1,0 +1,11 @@
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\bin\Debug\LoadRemoveFile.exe.config
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\bin\Debug\LoadRemoveFile.exe
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\bin\Debug\LoadRemoveFile.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.Form1.resources
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.myResources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.Properties.Resources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.csproj.GenerateResource.Cache
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.exe
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\LoadRemoveFile\LoadRemoveFile\obj\Debug\LoadRemoveFile.ChangeTitle.resources
