@@ -1,0 +1,10 @@
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\bin\Debug\SaveLoadPractice.exe.config
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\bin\Debug\SaveLoadPractice.exe
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\bin\Debug\SaveLoadPractice.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.Form1.resources
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.myResources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.Properties.Resources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.csproj.GenerateResource.Cache
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.exe
+c:\users\andrei\documents\visual studio 2013\Projects\SaveLoadPractice\SaveLoadPractice\obj\Debug\SaveLoadPractice.pdb
