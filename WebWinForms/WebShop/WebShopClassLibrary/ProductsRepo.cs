@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace WebShopClassLibrary
+{
+    public static class ProductsRepo
+    {
+        public static List<Product> products = new List<Product>();
+
+        public static void addProduct(Product p)
+        {
+            products.Add(p);
+        }
+
+        public static void removeProductById(int id)
+        {
+            foreach (Product p in products)
+            {
+                if (p.ID == id)
+                {
+                    products.Remove(p);
+                }
+            }
+        }
+
+        public static Product getProductById(int id)
+        {
+            foreach (Product p in products)
+            {
+                if (p.ID == id)
+                {
+                    return p;
+                }
+            }
+
+            return new Product() { Name = "Null" };
+        }
+
+        public static void updateProductById(int id, string name, double price)
+        {
+            foreach (Product p in products)
+            {
+                if (p.ID == id)
+                {
+                    p.Name = name;
+                    p.Price = price;
+                }
+            }
+        }
+    }
+}
