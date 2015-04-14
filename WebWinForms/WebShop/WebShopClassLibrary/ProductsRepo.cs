@@ -40,7 +40,7 @@ namespace WebShopClassLibrary
             return new Product() { Name = "Null" };
         }
 
-        public static void updateProductById(int id, string name, double price)
+        public static void updateProductById(int id, string name, double price, DateTime date)
         {
             foreach (Product p in products)
             {
@@ -48,6 +48,7 @@ namespace WebShopClassLibrary
                 {
                     p.Name = name;
                     p.Price = price;
+                    p.ExpirationDate = date;
                 }
             }
         }

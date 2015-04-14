@@ -33,24 +33,5 @@ namespace WebShopClassLibrary
                 }
             }
         }
-
-        public void updateCart()
-        {
-            List<Product> newCart = new List<Product>();
-
-            foreach (Product p in products)
-            {
-                try
-                {
-                    newCart.Add(ProductsRepo.getProductById(p.ID));
-                }
-                catch
-                {
-
-                }
-            }
-
-            products = newCart;
-        }
     }
 }

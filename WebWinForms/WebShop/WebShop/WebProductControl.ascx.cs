@@ -10,12 +10,23 @@ namespace WebShop
 {
     public partial class WebProductControl : System.Web.UI.UserControl
     {
+        private static int _classID;
+        private int _id;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["cart"] == null)
             {
                 Session.Add("cart", new Cart());
             }
+
+            _id = ++_classID;
+
+            RequiredFieldValidator1.ValidationGroup = _id.ToString();
+            RequiredFieldValidator2.ValidationGroup = _id.ToString();
+            RequiredFieldValidator3.ValidationGroup = _id.ToString();
+            CompareValidator1.ValidationGroup = _id.ToString();
+            btnAction.ValidationGroup = _id.ToString();
         }
 
         public void showProduct(Product p)
@@ -30,6 +41,7 @@ namespace WebShop
 
             btnAction.CommandArgument = p.ID.ToString();
             btnAction.Text = "Add to cart";
+            btnAction.CausesValidation = false;
             btnAction.Click += btnAction_Click;
         }
 
@@ -59,7 +71,15 @@ namespace WebShop
             string name = txtName.Text;
             double price = double.Parse(txtPrice.Text);
 
-            ProductsRepo.updateProductById(id, name, price);
+            DateTime temp;
+            if (DateTime.TryParse(txtPrice.Text, out temp))
+            {
+                ProductsRepo.updateProductById(id, name, price, temp);
+            }
+            else
+            {
+                LiteralControl ltr = new LiteralControl("Date is in wrong format!");
+            }
         }
 
         private void btnActionAdd_Click(object sender, EventArgs e)

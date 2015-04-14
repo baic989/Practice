@@ -12,8 +12,8 @@ namespace WebShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            lblTotal.Text = (Session["cart"] as Cart).Total.ToString();
+            Cart c = Session["cart"] as Cart;
+            lblTotal.Text = c.Total.ToString();
         }
 
         protected void lbCart_Click(object sender, EventArgs e)
