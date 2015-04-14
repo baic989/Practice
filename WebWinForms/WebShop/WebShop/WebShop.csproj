@@ -61,6 +61,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebUserHeaderControl.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration.aspx.cs">
@@ -85,6 +86,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebUserHeaderControl.ascx.cs">
+      <DependentUpon>WebUserHeaderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserHeaderControl.ascx.designer.cs">
+      <DependentUpon>WebUserHeaderControl.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

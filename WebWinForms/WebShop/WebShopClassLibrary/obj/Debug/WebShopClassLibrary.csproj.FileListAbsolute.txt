@@ -1,0 +1,5 @@
+C:\Users\andrei\Documents\Visual Studio 2013\Projects\WebShop\WebShopClassLibrary\bin\Debug\WebShopClassLibrary.dll
+C:\Users\andrei\Documents\Visual Studio 2013\Projects\WebShop\WebShopClassLibrary\bin\Debug\WebShopClassLibrary.pdb
+C:\Users\andrei\Documents\Visual Studio 2013\Projects\WebShop\WebShopClassLibrary\obj\Debug\WebShopClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\andrei\Documents\Visual Studio 2013\Projects\WebShop\WebShopClassLibrary\obj\Debug\WebShopClassLibrary.dll
+C:\Users\andrei\Documents\Visual Studio 2013\Projects\WebShop\WebShopClassLibrary\obj\Debug\WebShopClassLibrary.pdb

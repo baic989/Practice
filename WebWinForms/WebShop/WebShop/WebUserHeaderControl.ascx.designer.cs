@@ -10,24 +10,15 @@
 namespace WebShop {
     
     
-    public partial class Default {
+    public partial class WebUserHeaderControl {
         
         /// <summary>
-        /// form1 control.
+        /// LoginView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// WebUserHeaderControl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebShop.WebUserHeaderControl WebUserHeaderControl;
+        protected global::System.Web.UI.WebControls.LoginView LoginView1;
     }
 }
