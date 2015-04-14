@@ -55,8 +55,8 @@ namespace WebShopClassLibrary
 
         static ProductsRepo()
         {
-            Product p1 = new Product() { Name = "Milk", Price = 2.99 };
-            Product p2 = new Product() { Name = "Chocolate", Price = 3.89 };
+            Product p1 = new Product() { Name = "Milk", Price = 2.99, ExpirationDate = DateTime.Now };
+            Product p2 = new Product() { Name = "Chocolate", Price = 3.89, ExpirationDate = DateTime.Now };
 
             products.Add(p1);
             products.Add(p2);

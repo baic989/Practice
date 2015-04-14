@@ -34,6 +34,7 @@ namespace WebShop
             lblID.Text = p.ID.ToString();
             txtName.Text = p.Name;
             txtPrice.Text = p.Price.ToString();
+            txtDate.Text = p.ExpirationDate.ToString();
 
             txtName.Enabled = false;
             txtPrice.Enabled = false;
@@ -70,16 +71,8 @@ namespace WebShop
             int id = int.Parse(btn.CommandArgument);
             string name = txtName.Text;
             double price = double.Parse(txtPrice.Text);
-
-            DateTime temp;
-            if (DateTime.TryParse(txtPrice.Text, out temp))
-            {
-                ProductsRepo.updateProductById(id, name, price, temp);
-            }
-            else
-            {
-                LiteralControl ltr = new LiteralControl("Date is in wrong format!");
-            }
+            DateTime date = DateTime.Parse(txtDate.Text);
+            ProductsRepo.updateProductById(id, name, price, date);
         }
 
         private void btnActionAdd_Click(object sender, EventArgs e)
@@ -87,6 +80,7 @@ namespace WebShop
             Product p = new Product();
             p.Name = txtName.Text;
             p.Price = Convert.ToDouble(txtPrice.Text);
+            p.ExpirationDate = DateTime.Parse(txtDate.Text);
 
             ProductsRepo.addProduct(p);
 
