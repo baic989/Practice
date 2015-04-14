@@ -17,11 +17,12 @@ namespace WebShopClassLibrary
 
         public static void removeProductById(int id)
         {
-            foreach (Product p in products)
+            for (int i = 0; i < products.Count; i++)
             {
-                if (p.ID == id)
+                if (products[i].ID == id)
                 {
-                    products.Remove(p);
+                    products.RemoveAt(i);
+                    break;
                 }
             }
         }

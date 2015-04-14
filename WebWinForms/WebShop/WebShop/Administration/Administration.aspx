@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebShop.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Administration.aspx.cs" Inherits="WebShop.Administration.Administration" %>
 
 <%@ Register Src="~/WebUserHeaderControl.ascx" TagPrefix="uc1" TagName="WebUserHeaderControl" %>
 <%@ Register Src="~/WebProductControl.ascx" TagPrefix="uc1" TagName="WebProductControl" %>
@@ -14,8 +14,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <uc1:WebUserHeaderControl runat="server" id="WebUserHeaderControl" />
-        <asp:Panel ID="pnlData" runat="server"></asp:Panel>
+        <uc1:WebUserHeaderControl runat="server" ID="WebUserHeaderControl" />
+        <asp:Panel ID="pnlAdd" runat="server"></asp:Panel>
+        <asp:Panel ID="pnlEdit" runat="server"></asp:Panel>
     </div>
     </form>
 </body>

@@ -8,11 +8,19 @@ namespace WebShopClassLibrary
 {
     public class Cart
     {
+        double total;
+
+        public double Total
+        {
+            get { return total; }
+        }
+
         public List<Product> products = new List<Product>();
 
         public void addProduct(Product p)
         {
             products.Add(p);
+            total += p.Price;
         }
 
         public void removeProductById(int id)

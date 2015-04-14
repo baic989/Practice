@@ -6,6 +6,9 @@
     </AnonymousTemplate>
     <LoggedInTemplate>
         Hello, <asp:LoginName ID="LoginName1" runat="server" />&nbsp
-        <asp:LoginStatus ID="LoginStatus2" runat="server" />
+        <asp:LoginStatus ID="LoginStatus2" runat="server" />&nbsp
+        <asp:LinkButton ID="lbCart" runat="server" OnClick="lbCart_Click">See Cart</asp:LinkButton>
     </LoggedInTemplate>
 </asp:LoginView>
+&nbsp;&nbsp;&nbsp;
+Total: <asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label>

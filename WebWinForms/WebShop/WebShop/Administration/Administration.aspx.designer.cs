@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebShop {
+namespace WebShop.Administration {
     
     
-    public partial class Default {
+    public partial class Administration {
         
         /// <summary>
         /// form1 control.
@@ -31,12 +31,21 @@ namespace WebShop {
         protected global::WebShop.WebUserHeaderControl WebUserHeaderControl;
         
         /// <summary>
-        /// pnlData control.
+        /// pnlAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlData;
+        protected global::System.Web.UI.WebControls.Panel pnlAdd;
+        
+        /// <summary>
+        /// pnlEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEdit;
     }
 }

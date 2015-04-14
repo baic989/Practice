@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebShopClassLibrary;
 
-namespace WebShop
+namespace WebShop.Administration
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Administration : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,11 +17,18 @@ namespace WebShop
                 Session.Add("cart", new Cart());
             }
 
+            WebProductControl addItemCtrl = LoadControl("~/WebProductControl.ascx") as WebProductControl;
+
+            addItemCtrl.addNewProduct();
+
+            pnlAdd.Controls.Add(addItemCtrl);
+
             foreach (Product p in ProductsRepo.products)
             {
                 WebProductControl ctrl = LoadControl("~/WebProductControl.ascx") as WebProductControl;
-                ctrl.showProduct(p);
-                pnlData.Controls.Add(ctrl);
+                ctrl.editProduct(p);
+
+                pnlEdit.Controls.Add(ctrl);
             }
         }
     }

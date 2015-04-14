@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebShopClassLibrary;
 
 namespace WebShop
 {
@@ -12,6 +13,12 @@ namespace WebShop
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            lblTotal.Text = (Session["cart"] as Cart).Total.ToString();
+        }
+
+        protected void lbCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewCart.aspx");
         }
     }
 }
