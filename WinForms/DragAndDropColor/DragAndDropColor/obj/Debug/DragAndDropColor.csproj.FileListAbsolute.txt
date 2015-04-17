@@ -1,0 +1,9 @@
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\bin\Debug\DragAndDropColor.exe.config
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\bin\Debug\DragAndDropColor.exe
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\bin\Debug\DragAndDropColor.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.Form1.resources
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.Properties.Resources.resources
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.csproj.GenerateResource.Cache
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.exe
+c:\users\andrei\documents\visual studio 2013\Projects\DragAndDropColor\DragAndDropColor\obj\Debug\DragAndDropColor.pdb
