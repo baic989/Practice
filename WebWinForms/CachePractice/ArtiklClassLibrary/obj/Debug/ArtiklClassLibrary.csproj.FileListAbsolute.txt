@@ -1,0 +1,5 @@
+c:\users\andrei\documents\visual studio 2013\Projects\CachePractice\ArtiklClassLibrary\bin\Debug\ArtiklClassLibrary.dll
+c:\users\andrei\documents\visual studio 2013\Projects\CachePractice\ArtiklClassLibrary\bin\Debug\ArtiklClassLibrary.pdb
+c:\users\andrei\documents\visual studio 2013\Projects\CachePractice\ArtiklClassLibrary\obj\Debug\ArtiklClassLibrary.csprojResolveAssemblyReference.cache
+c:\users\andrei\documents\visual studio 2013\Projects\CachePractice\ArtiklClassLibrary\obj\Debug\ArtiklClassLibrary.dll
+c:\users\andrei\documents\visual studio 2013\Projects\CachePractice\ArtiklClassLibrary\obj\Debug\ArtiklClassLibrary.pdb

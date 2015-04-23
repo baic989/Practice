@@ -10,24 +10,24 @@
 namespace CachePractice {
     
     
-    public partial class MzPage {
+    public partial class PrikaziJedanArtikl {
         
         /// <summary>
-        /// blArtikli control.
+        /// txtID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList blArtikli;
+        protected global::System.Web.UI.WebControls.TextBox txtID;
         
         /// <summary>
-        /// lblVrijeme control.
+        /// btnPrikazi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVrijeme;
+        protected global::System.Web.UI.WebControls.Button btnPrikazi;
     }
 }
